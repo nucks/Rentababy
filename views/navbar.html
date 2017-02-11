@@ -1,0 +1,82 @@
+<nav class="fh5co-nav" role="navigation">
+
+<!-- CART -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">MY CART</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="baby-container" ng-repeat="baby in babyCart" ng-show="babyCart">
+            <h3 class="cart-item">{{ baby.id + 1 }}</h3>
+            <img id="cart-header-photo" ng-src="{{ baby.babyHeaderPicture }}" />
+            <h6 class="cart-item" id="cart-name">{{ baby.babyName }}</h6>
+            <h6 class="cart-item" id="cart-price">{{ baby.babyPrice }}</h6>
+        </div>
+        <hr>
+        <h3>Total: </h3>
+        <button ng-click="emptyCart()">Empty Cart</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-xs-2">
+					<div id="fh5co-logo"><a ui-sref="home">rentababy</a></div>
+				</div>
+				<div class="col-md-6 col-xs-6 text-center menu-1">
+					<ul>
+						<li class="has-dropdown">
+							<a ui-sref="shop">Shop</a>
+							<ul class="dropdown">
+								<li><a href="single.html">Cute Babies</a></li>
+								<li><a href="single.html">Sweet Babies</a></li>
+								<li><a href="single.html">Tired Babies</a></li>
+								<li><a href="single.html">Hungry Babies</a></li>
+								<li><a href="single.html">Chunky Babies</a></li>
+							</ul>
+						</li>
+						<li><a ui-sref="about">About</a></li>
+						<li class="has-dropdown">
+							<a ui-sref="services">Services</a>
+							<ul class="dropdown">
+								<li><a href="#">Baby Feeding</a></li>
+								<li><a href="#">Baby Rental</a></li>
+								<li><a href="#">Babysitting</a></li>
+								<li><a href="#">Baby Games</a></li>
+							</ul>
+						</li>
+						<li><a ui-sref="contact">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+					<ul>
+						<li class="search">
+							<div class="input-group">
+						      <input type="text" placeholder="Search..">
+						      <span class="input-group-btn">
+						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+						      </span>
+						    </div>
+						</li>
+						<li class="shopping-cart" data-toggle="modal" data-target="#myModal"><a href="#" class="cart"><span><small>{{ babyCart.length }}</small><i class="icon-shopping-cart"></i></span></a></li>
+                                <!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">-->
+  <!--Launch demo modal-->
+<!--</button>-->
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
