@@ -1,6 +1,5 @@
 angular.module( 'rentababy' )
 .controller( 'homeCtrl', function( $scope, $state, $stateParams ) {
-console.log( $state );
     $scope.babyCart = [];
 
     $scope.addToCart = ( babyType ) => {
@@ -14,7 +13,6 @@ console.log( $state );
             babyPictures: $scope.babyPictures
         }
         $scope.babyCart.push( baby );
-        console.log( $scope.babyCart, 'BABY CART' );
     }
 
     $scope.emptyCart = () => {
