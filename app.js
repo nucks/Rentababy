@@ -4,12 +4,12 @@ angular.module( 'rentababy', [ 'ui.router' ] )
   $urlRouterProvider.otherwise('/');
   $stateProvider.state( 'home', {
     url: '/',
-    templateUrl: './home.html',
+    templateUrl: './views/home.html',
     controller: 'homeCtrl'
   } )
   .state( 'shop', {
     url: '/shop',
-    templateUrl: './shop.html'
+    templateUrl: './views/shop.html'
   } )
   .state( 'baby', {
     url: '/baby/:baby', 
